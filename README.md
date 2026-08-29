@@ -1,4 +1,4 @@
-# MeshLink
+# Mesh Messenger
 
 ### Infrastructure-Free Peer-to-Peer Mesh Messaging
 
