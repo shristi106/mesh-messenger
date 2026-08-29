@@ -1,0 +1,39 @@
+@startuml
+title Mesh Messenger - How It Works
+
+left to right direction
+
+rectangle "📱 Sender" as S
+rectangle "📱 Relay A" as A
+rectangle "📱 Relay B" as B
+rectangle "📱 Recipient" as R
+
+S --> A : BLE / Wi-Fi Direct
+A --> B : Forward
+B --> R : Forward
+
+S ..> R : No direct connection required
+
+note bottom of S
+Message encrypted
+Unique ID
+TTL
+end note
+
+note bottom of A
+Check ID
+Check TTL
+Relay message
+end note
+
+note bottom of B
+Store & Forward
+if recipient unavailable
+end note
+
+note bottom
+Infrastructure-free communication
+No Internet - No SIM - No Cell Tower
+end note
+
+@enduml
